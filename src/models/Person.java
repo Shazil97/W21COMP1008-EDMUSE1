@@ -4,37 +4,38 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Person {
-    private String firstName;
-    private String lastName;
-    private String address;
+    private String firstName, lastName, address;
     private LocalDate birthday;
 
-
-    public Person(String firstname, String lastname, String address, LocalDate birthday) {
-        setFirstName (firstname);
-        setLastName (lastname);
-        setAddress (address);
-        setBirthday (birthday);
+    public Person(String firstName, String lastName, String address, LocalDate birthday) {
+        setFirstName(firstName);
+        setLastName(lastName);
+        setAddress(address);
+        setBirthday(birthday);
     }
 
-    public String getFirstname() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstname) {
-        firstname = firstname.trim();
-        if (firstname.length()>2)
-          this.firstName = firstname;
+    public void setFirstName(String firstName) {
+        firstName = firstName.trim();
+        if (firstName.length()>=2 && firstName.length()<=20)
+            this.firstName = firstName;
         else
-            throw new IllegalArgumentException("first name required at least 2 character");
+            throw new IllegalArgumentException("first name must be 2-20 characters");
     }
 
-    public String getLastname() {
+    public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastname) {
-        this.lastName = lastname;
+    public void setLastName(String lastName) {
+        lastName = lastName.trim();
+        if (lastName.length()>=2 && lastName.length()<=30)
+            this.lastName = lastName;
+        else
+            throw new IllegalArgumentException("last name must be 2-30 characters");
     }
 
     public String getAddress() {
@@ -42,7 +43,11 @@ public class Person {
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        address = address.trim();
+        if (address.length()>=5 && address.length()<=100)
+            this.address = address;
+        else
+            throw new IllegalArgumentException("address must be 5 to 100 characters in length");
     }
 
     public LocalDate getBirthday() {
@@ -50,16 +55,18 @@ public class Person {
     }
 
     public void setBirthday(LocalDate birthday) {
+        if (birthday.isAfter(LocalDate.now()))
+            throw new IllegalArgumentException("birthday cannot be in the future");
         this.birthday = birthday;
     }
-
-    /**
-    * This method will return the amount of complete years since the birthday to the current date
-     *
-     */
 
     public int getAge()
     {
         return Period.between(birthday, LocalDate.now()).getYears();
+    }
+
+    public String toString()
+    {
+        return String.format("%s %s age: %d years old", firstName, lastName, getAge());
     }
 }

@@ -1,6 +1,7 @@
 package models;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Person {
     private String firstName;
@@ -21,7 +22,11 @@ public class Person {
     }
 
     public void setFirstName(String firstname) {
-        this.firstName = firstname;
+        firstname = firstname.trim();
+        if (firstname.length()>2)
+          this.firstName = firstname;
+        else
+            throw new IllegalArgumentException("first name required at least 2 character");
     }
 
     public String getLastname() {
@@ -55,6 +60,6 @@ public class Person {
 
     public int getAge()
     {
-        return -1;
+        return Period.between(birthday, LocalDate.now()).getYears();
     }
 }

@@ -3,33 +3,33 @@ package models;
 import java.time.LocalDate;
 
 public class Person {
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String address;
     private LocalDate birthday;
 
 
     public Person(String firstname, String lastname, String address, LocalDate birthday) {
-        setFirstname (firstname);
-        setLastname (lastname);
+        setFirstName (firstname);
+        setLastName (lastname);
         setAddress (address);
         setBirthday (birthday);
     }
 
     public String getFirstname() {
-        return firstname;
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
     }
 
     public String getLastname() {
-        return lastname;
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
     }
 
     public String getAddress() {
@@ -46,5 +46,15 @@ public class Person {
 
     public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    /**
+    * This method will return the amount of complete years since the birthday to the current date
+     *
+     */
+
+    public int getAge()
+    {
+        return -1;
     }
 }

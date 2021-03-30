@@ -22,7 +22,7 @@ public class Professor extends Person{
      */
     public void addTeachable(String newCourseCode)
     {
-        if (ListFromDB.getCourseCodes().contains(newCourseCode))
+        if (DBUtility.getCourseCodes().contains(newCourseCode))
             teachables.add(newCourseCode);
         else
             throw new IllegalArgumentException("The course code must already be defined in the DB");

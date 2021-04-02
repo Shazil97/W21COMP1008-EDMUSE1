@@ -13,25 +13,30 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class DashboardViewController implements Intializable {
+public class DashboardViewController implements Initializable {
 
     @FXML
     private Label studentsLabel;
-    @FXML
-    private ListView<Student> studentListView;
-    @FXML
-    private Label proffessorsLabel;
-    @FXML
-    private ListView<Professor>professorListView;
-    @FXML
-    private Label courseLabel;
 
+    @FXML
+    private ListView<Student> studentsListView;
+
+    @FXML
+    private Label professorsLabel;
+
+    @FXML
+    private ListView<Professor> professorsListView;
+
+    @FXML
+    private Label coursesLabel;
+
+
+
+                   //Method for Intializing the Array Lists
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         studentsListView.getItems().addAll(DBUtility.getStudentsFromDB());
         DBUtility.getProfessorsFromDB();
-
-        //update the label's to show how many students and proffesor  are in each list
-        studentsLabel.setText("Students : "+studentListView.getItems().size());
     }
 }
+

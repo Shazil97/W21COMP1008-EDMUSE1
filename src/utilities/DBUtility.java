@@ -22,7 +22,7 @@ public class DBUtility {
             "COMP 1011", "COMP 1073", "COMP 2084", "COMP 3002",
             "COMP 2068");
     }
-
+         //Array List of Students from DB
     public static ArrayList<Student> getStudentsFromDB() {
         ArrayList<Student> students = new ArrayList<>();
         students.add(new Student("Rose","Ruffner","3846 St. Paul StreetSt Catharines ON L2S 3A1", LocalDate.of(1975,8,27), 20000001));
@@ -33,6 +33,7 @@ public class DBUtility {
         students.add(new Student("Barbara","Gable","3671 Scotchmere Dr Sarnia ON N7T 7T9", LocalDate.of(2002,11,13),20000006));
         return students;
     }
+               //Array List of Professor from DB
     public static ArrayList<Professor> getProfessorsFromDB()
     {
         ArrayList<Professor> professors = new ArrayList<>();

@@ -26,21 +26,21 @@
                   <VBox spacing="5.0">
                      <children>
                         <Label fx:id="studentsLabel" text="Students" />
-                        <ListView fx:id="studentsListview" />
+                        <ListView fx:id="studentsListView" />
                         <Button mnemonicParsing="false" text="Create Student" />
                      </children>
                   </VBox>
                   <VBox spacing="5.0" GridPane.rowIndex="1">
                      <children>
-                        <Label fx:id="ProfessorLabel" text="Professor" />
-                        <ListView fx:id="professorListview" />
+                        <Label fx:id="ProfessorLabel" text="Professors" />
+                        <ListView fx:id="professorsListView" />
                         <Button mnemonicParsing="false" text="Create Professor" />
                      </children>
                   </VBox>
                   <VBox spacing="5.0" GridPane.columnIndex="1">
                      <children>
                         <Label fx:id="coursesLabel" text="Courses" />
-                        <ListView fx:id="coursesListview" />
+                        <ListView fx:id="coursesListView" />
                         <Button mnemonicParsing="false" text="Create Courses" />
                      </children>
                   </VBox>

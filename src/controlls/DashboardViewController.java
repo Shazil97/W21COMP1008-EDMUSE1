@@ -35,8 +35,20 @@ public class DashboardViewController implements Initializable {
                    //Method for Intializing the Array Lists
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        studentsListView.getItems().addAll(DBUtility.getStudentsFromDB());
-        DBUtility.getProfessorsFromDB();
+        studentsListView.getItems().addAll(DBUtility.getStudentsFromDB());   //Student List view called from DBUtility
+        professorsListView.getItems().addAll(DBUtility.getProfessorsFromDB());  //professor List view called from DBUtility
+
+        //update the label's to show how many students and professors are in each list
+        studentsLabel.setText("Students : "+studentsListView.getItems().size());
+       //professorsLabel.setText("Professors : "+professorsListView.getItems().size());
+
+
+        /*1) A new view/ controller to move to
+        * 2) Code to recognize when the "creat student" button is pushed to change scenes */
+
+
+
+
     }
 }
 

@@ -70,7 +70,7 @@ public class Main {
              */
             @Override
             public void start(Stage stage) throws Exception {
-                Parent root = FXMLLoader.load(getClass().getResource("views/dashboardView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("views/DashboardView.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.setTitle("EdMuse Dashboard");
